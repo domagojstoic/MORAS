@@ -1,0 +1,9 @@
+CHIP Checkif0{
+    IN in[16], sel;
+    OUT out[16];
+
+    PARTS:
+
+    Inc16(in=in, out=out1);
+    Mux16(a=out1,b=false,sel=sel,out=out);
+}

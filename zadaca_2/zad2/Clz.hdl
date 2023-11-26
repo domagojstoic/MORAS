@@ -1,0 +1,23 @@
+CHIP Clz{
+    IN in[16];
+    OUT out[16];
+    PARTS:
+
+    And16(a=false,b=false,out=c0);
+    Checkif0(in=c0,sel=in[0],out=c1);
+    Checkif0(in=c1,sel=in[1],out=c2);
+    Checkif0(in=c2,sel=in[2],out=c3);
+    Checkif0(in=c3,sel=in[3],out=c4);
+    Checkif0(in=c4,sel=in[4],out=c5);
+    Checkif0(in=c5,sel=in[5],out=c6);
+    Checkif0(in=c6,sel=in[6],out=c7);
+    Checkif0(in=c7,sel=in[7],out=c8);
+    Checkif0(in=c8,sel=in[8],out=c9);
+    Checkif0(in=c9,sel=in[9],out=c10);
+    Checkif0(in=c10,sel=in[10],out=c11);
+    Checkif0(in=c11,sel=in[11],out=c12);
+    Checkif0(in=c12,sel=in[12],out=c13);
+    Checkif0(in=c13,sel=in[13],out=c14);
+    Checkif0(in=c14,sel=in[14],out=c15);
+    Checkif0(in=c15,sel=in[15],out=out);
+}
