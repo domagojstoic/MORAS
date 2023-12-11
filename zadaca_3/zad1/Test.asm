@@ -1,0 +1,1 @@
+(NEKA_OZNAKA) A + B + C + D
