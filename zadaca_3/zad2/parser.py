@@ -86,6 +86,8 @@ class Parser:
         for line in self._file:
             self._lines.append((line, n, n));
             n += 1
+        (a,b,c)=self._lines[-1]
+        self._lines[-1]=(a+" ",b,c)
 
     # Funkcija upisuje parsirane linije u output ".hack" datoteku.
     def _write_file(self):
