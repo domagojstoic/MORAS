@@ -1,0 +1,27 @@
+function max 3
+    push argument 0
+    push argument 1
+    push argument 2
+    push argument 0
+    push argument 1
+    gt
+    if-goto BiggerA
+    goto BiggerB
+    label BiggerA
+        push argument 0
+        push argument 2
+        gt
+        if-goto END
+        goto ReturnC
+    label BiggerB
+        push argument 1
+        push argument 2
+        gt
+        if-goto ReturnB
+    label ReturnC
+        pop local 0
+    label ReturnB
+        pop local 0
+    label END
+        push local 0
+        return

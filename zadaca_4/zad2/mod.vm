@@ -1,0 +1,24 @@
+function mod 2
+    push constant 0
+    push argument 0
+    push argument 1
+    label Loop_START
+        push local 2
+        push local 1
+        gt
+        if-goto END
+        push local 0
+        push constant 1
+        add
+        push local 1
+        push local 2
+        sub
+        push local 2
+        pop local 0
+        pop local 0
+        pop local 0
+        goto Loop_START
+    label END
+        pop local 0
+        push local 0
+        return

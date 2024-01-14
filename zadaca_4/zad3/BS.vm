@@ -1,0 +1,61 @@
+function BS.search 3
+    push argument 1
+    push constant 2
+    call div.div 2
+    label Loop_START
+        push local 0
+        push constant 0
+        eq
+        if-goto END
+        push argument 2
+        push local 0
+        push pointer 1
+        sub
+        pop pointer 1
+        push that 0
+        push local 1
+        push local 2
+        eq
+        if-goto END
+        push local 1
+        push local 2
+        gt
+        if-goto TopHalf
+        push local 1
+        push local 2
+        lt
+        if-goto BottomHalf
+    label TopHalf
+        push argument 1
+        push local 0
+        sub
+        pop local 0
+        pop local 0
+        pop local 0
+    label BottomHalf
+        push pointer 1
+        push local 0
+        sub
+        pop pointer 1
+        push local 0
+        push constant 2
+        call div.div 2
+        pop local 0
+    goto Loop_START
+    label END
+        push constant 32767
+        push argument 1
+        push local 0
+        sub
+        push local 0
+        push constant 0
+        gt
+        if-goto Eleminlist
+        pop local 2    
+    label Eleminlist
+        return
+
+        
+        
+
+        

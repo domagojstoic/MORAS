@@ -1,0 +1,28 @@
+function pell 1
+    push argument 0
+    push constant 0
+    push constant 1
+    label Loop_START
+        push local 0
+        push constant 0
+        eq
+        if-goto END
+        push local 1
+        push local 2
+        push local 2
+        sum
+        sum
+        pop local 1
+        push local 0
+        push constant 1
+        sub
+        push local 1
+        push local 2
+        pop local 0
+        pop local 0
+        pop local 0
+        goto Loop_START
+    label END
+        pop local 0 
+        push local 0
+        return
