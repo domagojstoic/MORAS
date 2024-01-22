@@ -1,0 +1,17 @@
+class Main{
+    function void main(){
+        var int i;
+        var int y;
+        do Screen.drawLine(0,32,64,32);
+        do Screen.drawLine(32,0,32,64);
+        let i=-32;
+        while(i<33){
+            let y=func.f(i);
+            if(y>-33 &(y<33)){
+                do Screen.drawPixel(i+32,32-y);
+            }
+            let i=i+1;
+        }
+        return;
+    }
+}

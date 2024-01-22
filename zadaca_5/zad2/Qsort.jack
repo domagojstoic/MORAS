@@ -1,0 +1,71 @@
+class Qsort{
+    function Array qsort(Array arr, int len){
+        var int lcurr;
+        var int rcurr;
+        var int i;
+        var int piv;
+        var int llen;
+        var int rlen;
+        var Array larr;
+        var Array rarr;
+        if(len<2)
+        {
+            return arr;
+        }
+        let rlen=0;
+        let llen=0;
+        let piv=arr[0];
+        let i=1;
+        while(i<len)
+        {
+            if(arr[i]<piv)
+            {
+                let llen=llen+1;
+            }
+            else
+            {
+                let rlen=rlen+1;
+            }
+            let i=i+1;
+        }
+        let lcurr=0;
+        let rcurr=0;
+        if(~(llen=0)){
+            let larr=Array.new(llen);
+            }
+        if(~(rlen=0)){
+            let rarr=Array.new(rlen);
+            }
+        let i=1;
+        while(i<len)
+        {
+            if(arr[i]<piv)
+            {
+                let larr[lcurr]=arr[i];
+                let lcurr=lcurr+1;
+            }
+            else
+            {
+                let rarr[rcurr]=arr[i];
+                let rcurr=rcurr+1;
+            }
+            let i=i+1;
+        }
+        do Qsort.qsort(larr,llen);
+        do Qsort.qsort(rarr,rlen);
+        let arr[llen]=piv;
+        let i=0;
+        while(i<llen)
+        {
+            let arr[i]=larr[i];
+            let i=i+1;
+        }
+        let i=0;
+        while(i<rlen)
+        {
+            let arr[i+llen+1]=rarr[i];
+            let i=i+1;
+        }
+        return arr;
+    }
+}

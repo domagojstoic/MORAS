@@ -1,0 +1,11 @@
+class Pow{
+    function int pow2(int n){
+        var int i;
+        let i=1;
+        while(n>0){
+            let i=i*2;
+            let n=n-1;
+        }
+        return i;
+    }
+}

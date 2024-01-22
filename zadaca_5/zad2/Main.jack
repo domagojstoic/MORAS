@@ -1,0 +1,18 @@
+class Main{
+    function void main(){
+        var vint vect;
+        var int n;
+        var int i;
+        let n=Keyboard.readInt("Enter capacity:");
+        let vect=vint.new(n);
+        let i=0;
+        while(i<vect.len()){
+            do vect.set(i,Keyboard.readInt("Enter element:"));
+            let i=i+1;
+        }
+        do Output.printInt(vect.get(0));
+        do Output.printString(" ");
+        do Output.printInt(vect.get(1));
+        return;
+    }
+}

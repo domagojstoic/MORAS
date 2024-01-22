@@ -1,0 +1,7 @@
+function func.f 0
+push constant 2
+push argument 0
+call Math.multiply 2
+push constant 1
+add
+return

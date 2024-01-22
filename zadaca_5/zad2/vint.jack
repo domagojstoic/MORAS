@@ -1,0 +1,80 @@
+class vint{
+    field int len;
+    field Array arr;
+    constructor vint new(int n){
+        var int k;
+        let k=Pow.pow2(n);
+        let len=k;
+        let arr=Array.new(k);
+        return this;
+    }
+    method void dispose(){
+        do Memory.deAlloc(this);
+        return;
+    }
+    method int len(){
+        return len;
+    }
+    method Array arr(){
+        return arr;
+    }
+    method void set(int k, int v){
+        let arr[k]=v;
+        return;
+    }
+    method int get(int k){
+        return arr[k];
+    }
+    method void resize(int m){
+        var Array arr2;
+        var int newlen;
+        var ine copylen;
+        var int i;
+        let newlen=Pow.pow2(m);
+        let arr2=Array.new(newlen);
+        let copylen=newlen*(newlen<len)+(len*(~(newlen<len)));
+        let i=0;
+        while(i<copylen){
+            let arr2[i]=arr[i];
+            let i=i+1;
+        }
+        while(i<newlen){
+            let arr2[i]=0;
+            let i=i+1;
+        }
+        return;
+    }
+    function bool is_eq(vint fst, vint snd){
+        var int i;
+        if(~(fst.len()=(snd.len()))){
+            return false;
+        }
+        let i=0;
+        while(i<fst.len()){
+            if(~(fst.set(i,(snd.get(i))))){
+                return false;
+            }
+        }
+        return true;
+    }
+    function bool elems(vint fst, vint snd){
+        var vint vint1;
+        var vint vint2;
+        var int i;
+        let i=0;
+        let vint1=Vint.new(fst.len());
+        while(i<fst.len()){
+            do vint1.set(i,fst.get(i));
+            let i=i+1;
+        }
+        let i=0;
+        let vint2=Vint.new(snd.len());
+        while(i<snd.len()){
+            do vint2.set(i,snd.get(i));
+            let i=i+1;
+        }
+        do Qsort.qsort(vint1.arr(),vint1.len());
+        do Qsort.qsort(vint2.arr(),vint2.len());
+        return (vint.is_eq(vint1,vint2));
+    }
+}

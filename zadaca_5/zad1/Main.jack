@@ -1,0 +1,27 @@
+class Main{
+    function void main(){
+        var Array arr;
+        var int len;
+        var int i;
+        let len=Keyboard.readInt("Array length:");
+        let arr=Array.new(len);
+        let i=0;
+        while(i<len){
+            let arr[i]=Keyboard.readInt("Input element:");
+            let i=i+1;
+        }
+        do Qsort.qsort(arr,len);
+        let i=0;
+        do Output.printString("[");
+        while(i<len){
+            do Output.printInt(arr[i]);
+            if(i<(len-1)){
+                do Output.printString(",");
+            }
+            let i=i+1;
+        }
+        do Output.printString("]");
+
+        return;
+    }
+}
