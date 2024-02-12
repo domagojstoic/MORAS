@@ -154,7 +154,9 @@ class Tokenizer:
                         self._line = self._line[:i] + ' ' + self._line[j + 2:]
 
                 i = self._line.find("//")
-                if i != -1: self._line = self._line[:i]
+                if i != -1:
+                  self._line = self._line[:i]
+                  self._comment = False
                 
 
                 self._line = self._line.replace('\t', ' ').strip()
